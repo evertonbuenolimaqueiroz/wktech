@@ -1,0 +1,16 @@
+unit eInterface.Controller.CriarPedido;
+
+interface
+
+uses System.SysUtils, DateUtils, Uni;
+
+type
+  iPedido = Interface
+    ['{12EF5451-A517-4C35-BEDD-11238D4B844E}']
+    function criarpedido(const poQueryCab, poQueryItens: TUniQuery; const dataemissao: TDateTime;  const valor: Currency): Integer;
+    procedure editarpedido(const poQuery: TUniQuery; const pedido: Integer; const valor: Currency);
+  End;
+
+implementation
+
+end.

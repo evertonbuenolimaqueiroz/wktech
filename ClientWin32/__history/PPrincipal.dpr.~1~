@@ -1,0 +1,29 @@
+program PPrincipal;
+
+{
+  Autor Everton Bueno Lima.
+  ***Como o Terminal de Consulta é simples e não tem uma taxa grande de consumo
+  as aplicações serão abertas.
+}
+
+uses
+  Vcl.Forms,
+  Vcl.Controls,
+  UPPrincipal in 'UPPrincipal.pas' {frmprincipal} ,
+  UDM in 'Modulos\UDM.pas' {DM: TDataModule} ,
+  USelecionaEmpresa in 'View\USelecionaEmpresa.pas' {frmempresa} ,
+  MsgBox in '..\..\Queiroz & Bueno ERP\ClientWin32\Bibliotecas\MsgBox.pas',
+  uControleCDS in 'Biblioteca\uControleCDS.pas',
+  uControleDM in 'Biblioteca\uControleDM.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(Tfrmempresa, frmempresa);
+  Application.CreateForm(Tfrmprincipal, frmprincipal);
+  Application.Run;
+
+end.

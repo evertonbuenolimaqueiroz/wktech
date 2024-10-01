@@ -1,0 +1,50 @@
+unit uCliente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, dxDateRanges, Data.DB, cxDBData,
+  cxCurrencyEdit, cxGridLevel, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid;
+
+type
+  TCliente = class(TForm)
+    gInformacoes: TcxGrid;
+    gInformacoesDBTableView1: TcxGridDBTableView;
+    gInformacoesLevel1: TcxGridLevel;
+    dscliente: TDataSource;
+    gInformacoesDBTableView1nome: TcxGridDBColumn;
+    gInformacoesDBTableView1uf: TcxGridDBColumn;
+    procedure gInformacoesDBTableView1CellDblClick(
+      Sender: TcxCustomGridTableView;
+      ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+      AShift: TShiftState; var AHandled: Boolean);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cliente: TCliente;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TCliente.gInformacoesDBTableView1CellDblClick(
+  Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo;
+  AButton: TMouseButton; AShift: TShiftState; var AHandled: Boolean);
+begin
+  ModalResult := mrOk;
+  dm.qypedidocab.Edit;
+  dm.qypedidocabcliente.AsInteger := dm.qyclientecodigo.AsInteger;
+  dm.qypedidocab.Post;
+end;
+
+end.

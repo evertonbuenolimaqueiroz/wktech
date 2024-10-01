@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/05/28 23:27:03.000.855,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/27 16:24:27.000.253,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/13 14:48:32.000.838,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/13 14:59:19.000.083,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/14 11:06:13.000.667,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 14:23:56.000.831,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 14:27:06.000.976,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/25 15:52:30.000.824,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/27 14:17:41.000.600,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/27 14:24:18.000.473,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/27 14:26:24.000.095,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/10/02 15:30:02.000.300,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/10/09 12:45:40.000.547,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/10/28 22:34:20.000.710,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/10/28 22:34:21.000.333,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/10/28 22:34:21.000.890,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/10/28 22:51:04.000.970,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/10/28 22:51:04.000.593,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/10/28 22:51:04.000.090,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/11 20:27:25.000.630,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/11 20:45:15.000.144,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/11 20:48:35.000.063,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/11 20:50:01.000.257,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/11 20:50:59.000.092,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/15 20:20:38.000.162,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/04/18 21:23:11.000.026,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/06/05 17:49:11.000.885,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/07/29 12:25:54.000.988,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/26 19:32:38.000.438,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/07 12:44:50.000.727,=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/07 12:45:56.000.682,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\UPPrincipal.pas=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/07 12:45:56.000.682,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\UPPrincipal.dfm=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/09/07 12:45:59.000.753,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\PPrincipal.dproj=C:\Users\evert\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/09/07 13:24:06.000.334,=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2018/09/07 13:24:23.000.892,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Modulos\UDM.pas=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2018/09/07 13:24:23.000.892,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Modulos\UDM.dfm=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.dfm</Transaction>
+    <Transaction>2018/09/07 19:26:23.000.407,=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit2.pas</Transaction>
+    <Transaction>2018/09/07 19:26:35.000.870,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit2.dfm=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\View\USelecionaEmpresa.dfm</Transaction>
+    <Transaction>2018/09/07 19:26:35.000.870,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit2.pas=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\View\USelecionaEmpresa.pas</Transaction>
+    <Transaction>2018/09/07 19:37:45.000.495,=C:\queirozbueno\Queiroz &amp; Bueno GIT\Queiroz &amp; Bueno ERP\ClientWin32\Bibliotecas\MsgBox.pas</Transaction>
+    <Transaction>2021/05/24 18:54:49.000.539,=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2021/05/24 18:55:35.000.133,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Biblioteca\uControleCDS.pas=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2021/05/24 18:57:02.000.748,=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2021/05/24 18:57:25.000.975,C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Biblioteca\uControleDM.pas=C:\queirozbueno\Queiroz &amp; Bueno GIT\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 08:02:05.000.983,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Biblioteca\uControleCDS.pas=</Transaction>
+    <Transaction>2024/10/01 08:02:09.000.531,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Biblioteca\uControleDM.pas=</Transaction>
+    <Transaction>2024/10/01 08:02:16.000.875,=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Biblioteca\MsgBox.pas</Transaction>
+    <Transaction>2024/10/01 09:23:26.752,=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 09:24:05.783,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\View\uCliente.dfm=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.dfm</Transaction>
+    <Transaction>2024/10/01 09:24:05.783,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\View\uCliente.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 10:14:50.042,=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 10:17:55.322,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\uInterface.Controller.CriarPedido.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 10:22:37.087,=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 10:23:01.038,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\uInterface.Model.CriarPedido.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 10:32:25.330,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\eInterface.Controller.CriarPedido.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\uInterface.Controller.CriarPedido.pas</Transaction>
+    <Transaction>2024/10/01 10:32:29.665,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\eInterface.Model.CriarPedido.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Interface\uInterface.Model.CriarPedido.pas</Transaction>
+    <Transaction>2024/10/01 11:12:28.203,=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+    <Transaction>2024/10/01 11:12:39.777,C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Modulos\uSQL.pas=C:\queirozbueno\PROVAS\Consulta de Preço\ClientWin32\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

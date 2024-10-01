@@ -1,0 +1,29 @@
+program PPrincipal;
+
+{
+  Autor Everton Bueno Lima.
+  ***Como o Terminal de Consulta é simples e não tem uma taxa grande de consumo
+  as aplicações serão abertas.
+}
+
+uses
+  Vcl.Forms,
+  Vcl.Controls,
+  UPPrincipal in 'UPPrincipal.pas' {frmprincipal},
+  UDM in 'Modulos\UDM.pas' {DM: TDataModule},
+  MsgBox in 'Biblioteca\MsgBox.pas',
+  uCliente in 'View\uCliente.pas' {Fcliente},
+  uInterface.Controller.CriarPedido in 'Interface\uInterface.Controller.CriarPedido.pas',
+  uInterface.Model.CriarPedido in 'Interface\uInterface.Model.CriarPedido.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(Tfrmprincipal, frmprincipal);
+  Application.CreateForm(TFcliente, Fcliente);
+  Application.Run;
+
+end.

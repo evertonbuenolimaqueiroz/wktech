@@ -1,0 +1,45 @@
+unit UDM;
+
+interface
+
+{
+  Autor Everton Bueno Lima.
+}
+
+uses
+  System.SysUtils, System.Classes, Data.DB, DBAccess, Uni, UniProvider,
+  PostgreSQLUniProvider, MemDS, Data.Win.ADODB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait,
+  FireDAC.Comp.Client, MySQLUniProvider;
+
+type
+  TDM = class(TDataModule)
+    con: TUniConnection;
+    MySQLUniProvider: TMySQLUniProvider;
+    qycliente: TUniQuery;
+    qyprodutos: TUniQuery;
+    qypedidocab: TUniQuery;
+    qypedidoitens: TUniQuery;
+    qyclientecodigo: TLargeintField;
+    qyclientenome: TStringField;
+    qyclienteuf: TStringField;
+    qyprodutoscodigo: TLargeintField;
+    qyprodutosdescricao: TStringField;
+    qyprodutosprecovenda: TFloatField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+
+end.

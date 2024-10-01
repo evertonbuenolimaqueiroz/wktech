@@ -1,0 +1,111 @@
+object Cliente: TCliente
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cliente'
+  ClientHeight = 398
+  ClientWidth = 811
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  DesignSize = (
+    811
+    398)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object gInformacoes: TcxGrid
+    Left = -76
+    Top = -89
+    Width = 887
+    Height = 487
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    object gInformacoesDBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <
+        item
+          Hint = 'Habilitar/Desabilitar Filtro'
+          ImageIndex = 19
+        end
+        item
+          Hint = 'Habilitar/Desabilitar Grupo'
+          ImageIndex = 3
+        end>
+      Navigator.Buttons.Insert.Visible = False
+      Navigator.Buttons.Delete.Visible = False
+      Navigator.Buttons.Edit.Visible = False
+      Navigator.Buttons.Post.Visible = False
+      Navigator.Buttons.Cancel.Visible = False
+      Navigator.Buttons.Refresh.Visible = False
+      Navigator.Buttons.SaveBookmark.Visible = False
+      Navigator.Buttons.GotoBookmark.Visible = False
+      Navigator.Buttons.Filter.Visible = False
+      Navigator.InfoPanel.DisplayMask = '[RecordIndex] at'#233' [RecordCount]'
+      Navigator.InfoPanel.Visible = True
+      DataController.Filter.Options = [fcoCaseInsensitive]
+      DataController.Summary.DefaultGroupSummaryItems = <
+        item
+          Kind = skSum
+          Position = spFooter
+          Column = gInformacoesDBTableView1preco
+        end>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skSum
+          Column = gInformacoesDBTableView1preco
+        end>
+      DataController.Summary.SummaryGroups = <>
+      FilterRow.InfoText = 'Clique aqui para definir um filtro'
+      FilterRow.ApplyChanges = fracImmediately
+      OptionsBehavior.GoToNextCellOnEnter = True
+      OptionsBehavior.IncSearch = True
+      OptionsCustomize.ColumnsQuickCustomization = True
+      OptionsData.CancelOnExit = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsView.NoDataToDisplayInfoText = ':-) N'#227'o h'#225' nada para exibir aqui'
+      OptionsView.ColumnAutoWidth = True
+      OptionsView.Footer = True
+      OptionsView.GroupByBox = False
+      OptionsView.Indicator = True
+      object gInformacoesDBTableView1descricao: TcxGridDBColumn
+        Caption = 'Produto'
+        DataBinding.FieldName = 'descricao'
+        Width = 519
+      end
+      object gInformacoesDBTableView1quantidade: TcxGridDBColumn
+        Caption = 'Quantidade'
+        DataBinding.FieldName = 'quantidade'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Properties.DisplayFormat = ',0.00;-,0.00'
+        Width = 153
+      end
+      object gInformacoesDBTableView1preco: TcxGridDBColumn
+        Caption = 'Pre'#231'o Unit'#225'rio'
+        DataBinding.FieldName = 'preco'
+        PropertiesClassName = 'TcxCurrencyEditProperties'
+        Width = 201
+      end
+    end
+    object gInformacoesLevel1: TcxGridLevel
+      GridView = gInformacoesDBTableView1
+    end
+  end
+  object dscliente: TDataSource
+    Left = 720
+    Top = 32
+  end
+end

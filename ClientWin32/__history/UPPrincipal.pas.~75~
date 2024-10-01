@@ -1,0 +1,232 @@
+unit UPPrincipal;
+
+{
+  Autor Everton Bueno Lima.
+}
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CurvyControls, Vcl.StdCtrls, cxGraphics,
+  Datasnap.DBClient, AdvGlassButton,
+  Vcl.ExtCtrls, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
+  dxSkinsCore,
+  cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxEdit, cxNavigator, Data.DB, cxDBData, Vcl.Menus, cxButtons,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGrid, dxGDIPlusClasses,
+  cxCurrencyEdit, Vcl.Grids, Vcl.DBGrids,
+  cxDataControllerConditionalFormattingRulesManagerDialog, MidasLib,
+  dxDateRanges;
+
+type
+  Tfrmprincipal = class(TForm)
+    lblcodigodebarra: TLabel;
+    edtcodigo: TCurvyEdit;
+    edtquantidade: TCurvyEdit;
+    lblqnt: TLabel;
+    edtpreco: TCurvyEdit;
+    lblvalor: TLabel;
+    gdados: TcxGrid;
+    gidados: TcxGridDBTableView;
+    gldados: TcxGridLevel;
+    lbltemp: TLabel;
+    imgfundo: TImage;
+    btngravar: TAdvGlassButton;
+    gidadosdescricao: TcxGridDBColumn;
+    gidadosquantidade: TcxGridDBColumn;
+    gidadospreco: TcxGridDBColumn;
+    gConsulta: TcxGrid;
+    giconsulta: TcxGridDBTableView;
+    glconsulta: TcxGridLevel;
+    giconsultadescricao: TcxGridDBColumn;
+    btnincluir: TAdvGlassButton;
+    dsproduto: TDataSource;
+    dspedidocab: TDataSource;
+    dspedidoitens: TDataSource;
+    gInformacoesDBTableViewtotal: TcxGridDBColumn;
+    procedure edtcodigoChange(Sender: TObject);
+    procedure btngravarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure edtcodigoKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure giconsultaCustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure giconsultaKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btnincluirClick(Sender: TObject);
+    procedure edtquantidadeKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+    procedure ExecutarPedido;
+    procedure RestaurarDados;
+    procedure CriarPedido;
+  public
+    { Public declarations }
+  end;
+
+procedure tControleUP;
+procedure tControleENTER;
+
+var
+  frmprincipal: Tfrmprincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM, MsgBox, uCliente, eInterface.Model.CriarPedido;
+
+procedure tControleUP;
+begin
+  with frmprincipal do
+  begin
+    gConsulta.Visible := False;
+    edtcodigo.SetFocus;
+    edtcodigo.SelStart := length(edtcodigo.Text);
+  end;
+end;
+
+procedure Tfrmprincipal.CriarPedido;
+Begin
+  TPedido.New.AddPedido(dm.qypedidocab, now);
+  TPedido.New.AddProduto(dm.qypedidoitens, dm.qyprodutos, dm.qymaxcodigo, StrToCurr(edtquantidade.Text), StrToCurr(edtpreco.Text));
+  RestaurarDados;
+end;
+
+procedure Tfrmprincipal.btnincluirClick(Sender: TObject);
+begin
+  CriarPedido;
+end;
+
+procedure Tfrmprincipal.btngravarClick(Sender: TObject);
+begin
+  if dm.qypedidocab.IsEmpty then
+  begin
+    MsgBoxSimples('Não é possível gravar. Venda não aberta.', tmbAdvertencia);
+  end;
+
+  Fcliente := TFcliente.Create(nil);
+  try
+    Fcliente.ShowModal;
+  finally
+    FreeAndNil(Fcliente);
+  end;
+
+  c;
+
+  RestaurarDados;
+end;
+
+procedure Tfrmprincipal.CriarPedido;
+begin
+  TPedido.New.CriarPedido(dm.qypedidocab, dm.qypedidoitens, now,
+    StrToCurr(edtpreco.Text));
+end;
+
+procedure Tfrmprincipal.giconsultaCustomDrawCell(Sender: TcxCustomGridTableView;
+  ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+  var ADone: Boolean);
+begin
+  // Colorir seleção
+  if AViewInfo.GridRecord.Selected then
+  begin
+    ACanvas.Brush.Color := clBlue;
+    ACanvas.Canvas.Font.Color := clWhite;
+    ACanvas.Canvas.Font.Style := [fsBold];
+  end
+end;
+
+procedure Tfrmprincipal.giconsultaKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if dm.qyprodutos.RecNo = 1 then
+  begin
+    if Key = VK_UP then
+    begin
+      tControleUP;
+    end;
+  end;
+
+  if Key = VK_RETURN then
+  begin
+    gConsulta.Visible := False;
+    edtquantidade.SetFocus;
+
+    edtquantidade.Text := '1,00';
+    edtpreco.Text := dm.qyprodutosprecovenda.AsString;
+  end;
+end;
+
+procedure Tfrmprincipal.RestaurarDados;
+begin
+  edtcodigo.Text := '';
+  edtquantidade.Text := '1,00';
+  edtpreco.Text := '0,00';
+end;
+
+procedure Tfrmprincipal.edtcodigoChange(Sender: TObject);
+begin
+  if edtcodigo.Text <> '' then
+  begin
+    if sqlproduto = '' then
+      sqlproduto := dm.qyprodutos.sql.Text;
+
+    dm.qyprodutos.Close;
+    dm.qyprodutos.sql.Text := sqlproduto;
+    dm.qyprodutos.sql.Text := stringreplace(dm.qyprodutos.sql.Text, '@produto',
+      AnsiUpperCase(edtcodigo.Text), [rfreplaceall]);
+    dm.qyprodutos.Open;
+
+    gConsulta.Visible := True;
+    gConsulta.Height := Screen.Height - 300;
+  end
+  else
+    gConsulta.Visible := False;
+end;
+
+procedure Tfrmprincipal.edtcodigoKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if edtcodigo.Text <> '' then
+  begin
+    if Key = VK_RETURN then
+      if not dm.qyprodutos.IsEmpty then
+      begin
+        edtquantidade.Text := '1,00';
+        edtpreco.Text := dm.qyprodutosprecovenda.AsString;
+      end;
+
+    if not dm.qyprodutos.IsEmpty then
+      if Key = WM_NEXTDLGCTL then
+      begin
+        gConsulta.Visible := True;
+        gConsulta.SetFocus;
+      end;
+  end;
+end;
+
+procedure Tfrmprincipal.edtquantidadeKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_RETURN then
+    CriarPedido;
+end;
+
+procedure Tfrmprincipal.FormShow(Sender: TObject);
+begin
+  try
+    OpenPedido;
+    ExecutarPedido;
+    edtcodigo.SetFocus;
+  except
+
+  end;
+
+end;
+
+end.

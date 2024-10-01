@@ -1,0 +1,12 @@
+unit uInterface.Controller.CriarPedido;
+
+interface
+
+  IPedido = Interface
+    ['{12EF5451-A517-4C35-BEDD-11238D4B844E}']
+    procedure criarpedido(const const dataemissao datetime; const cliente: Integer; out maxcodigo: Integer);
+    procedure editarpedido(const pedido: Integer; const valor: Currency);
+  End;
+implementation
+
+end.

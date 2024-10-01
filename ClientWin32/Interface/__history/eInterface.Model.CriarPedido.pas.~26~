@@ -1,0 +1,108 @@
+unit eInterface.Model.CriarPedido;
+
+interface
+
+uses eInterface.Controller.CriarPedido, System.SysUtils, DateUtils, Uni;
+
+Type
+  TPedido = Class(TInterfacedObject, iPedido)
+  private
+    procedure CriarPedido(const poQuery: TUniQuery;
+      const dataemissao: TDateTime; const valor: Currency);
+    procedure editarpedidototal(const poQuery: TUniQuery; const pedido: Integer;
+      const valor: Currency);
+    function maxcodigopedido(const poQuery: TUniQuery): Integer;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iPedido;
+    procedure AddPedido(const poQuery: TUniQuery; const dataemissao: TDateTime;  const valor: Currency);
+    procedure EditarPedido(const poQuery: TUniQuery; const pedido: Integer; const valor: Currency; cliente: Integer);
+    function NumeroPedido(const poQuery: TUniQuery): Integer;
+    procedure AddProduto(const poQuery, poQueryProduto, poQueryNumeroPedido: TUniQuery; const quantidade, valor: Currency);
+    procedure AtualizarProduto(const poQuery: TUniQuery; const NumeroPedido: Integer);
+  end;
+
+implementation
+
+{ TPedido }
+
+procedure TPedido.AddPedido(const poQuery: TUniQuery;
+  const dataemissao: TDateTime; const valor: Currency);
+begin
+  if poQuery.IsEmpty then
+  begin
+    poQuery.Insert;
+    poQuery.FieldByName('dataemissao').AsDateTime := now;
+    poQuery.FieldByName('total').AsCurrency := poQuery.FieldByName('total').AsCurrency + valor;
+    poQuery.Post;
+  end;
+end;
+
+procedure TPedido.AddProduto(const poQuery, poQueryProduto, poQueryNumeroPedido: TUniQuery; const pedido: Integer;
+  const quantidade, valor: Currency);
+begin
+    poQuery.Insert;
+    poQuery.FieldByName('pedido').AsInteger := Tpedido.new.NumeroPedido(poQueryNumeroPedido);
+    poQuery.FieldByName('produto').AsInteger := poQueryProduto.FieldByName('codigo').AsInteger;
+    poQuery.FieldByName('quantidade').AsCurrency := quantidade;
+    poQuery.FieldByName('vlrunitario').AsCurrency := valor;
+    poQuery.FieldByName('vlrtotal').AsCurrency := quantidade * valor;
+    poQuery.Post;
+
+    TPedido.New.AtualizarProduto(poQuery, poQuery.FieldByName('pedido').AsInteger);
+end;
+
+procedure TPedido.AtualizarProduto(const poQuery: TUniQuery;
+  const NumeroPedido: Integer);
+begin
+  poQuery.Close;
+  poQuery.Params.ParamByName('pedido').AsInteger := NumeroPedido;
+  poQuery.Open;
+end;
+
+constructor TPedido.Create;
+begin
+
+end;
+
+destructor TPedido.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TPedido.EditarPedido(const poQuery: TUniQuery; const pedido: Integer;
+  const valor: Currency; cliente: Integer);
+begin
+  poQuery.Edit;
+  poQuery.FieldByName('total').AsCurrency := poQuery.FieldByName('total').AsCurrency + Valor;
+  poQuery.FieldByName('cliente').AsCurrency := cliente;
+  poQuery.Post;
+end;
+
+procedure TPedido.editarpedidototal(const poQuery: TUniQuery;
+  const pedido: Integer; const valor: Currency);
+begin
+
+end;
+
+function TPedido.maxcodigopedido(const poQuery: TUniQuery): Integer;
+begin
+
+end;
+
+class function TPedido.New: iPedido;
+begin
+  Result := Self.Create;
+end;
+
+function TPedido.NumeroPedido(const poQuery: TUniQuery): Integer;
+begin
+  poQuery.Close;
+  poQuery.Open;
+
+  Result := poQuery.FieldByName('maxcodigo').AsInteger;
+end;
+
+end.
